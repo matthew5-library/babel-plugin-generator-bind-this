@@ -1,11 +1,7 @@
 var plugin = require('../src/index')
 
 module.exports = {
-  presets: [
-    '@babel/preset-env',
-    '@babel/preset-react',
-    '@babel/preset-typescript'
-  ],
+  presets: ['@babel/preset-env'],
   plugins: [
     plugin,
     '@babel/plugin-transform-runtime',

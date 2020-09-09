@@ -88,7 +88,7 @@ function (_Base) {
           }
         }
       }, getContacts, this);
-    }).bind(this));
+    }).bind(_this));
     _this.saga2 = createSaga(
     /*#__PURE__*/
     _regenerator["default"].mark(function getContacts(action) {

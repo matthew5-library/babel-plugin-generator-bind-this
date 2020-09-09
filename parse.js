@@ -4,15 +4,17 @@ var t = babel.types
 
 var demoCode = `
   function Test() {
-    this.bindValue = 'class value'
-    this.saga1 = createSaga(function* getContacts(action) {
+    var _this = this
+    _this.bindValue = 'class value'
+    _this.saga1 = createSaga((function* getContacts(action) {
       console.log(action, this.bindValue)
-    })
+    }).bind(_this))
   }
   `
 
 const ast = babel.parse(demoCode)
-// fs.writeFileSync('./demoCode2.json', JSON.stringify(ast))
+fs.writeFileSync('./parse.json', JSON.stringify(ast))
+return
 
 const functionExpression = ast.program.body[0]
 const bindIdentifier = t.identifier('bind')
