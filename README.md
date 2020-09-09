@@ -1,9 +1,21 @@
+### Usage
+
+1. `yarn add babel-plugin-generator-bind-this -D`
+
+2. activate in .babelrc
+
+```json
+{
+  "plugins": ["babel-plugin-generator-bind-this"]
+}
+```
+
 ### Why
 
 1. generator cannot use arrow-function
-2. how to use this in generator by some special case  
-   in this case the generator in `result1` cannot use class property, and result2 can use this
-3. bind this by yourself or automatically by plugin
+2. check the special case below:  
+   in this case the generator in `result1` cannot get class property `bindValue` `"class value"`, but got `"scope value"`, and result2 can get `"class value"`
+3. `generator.bind(this)` by yourself or automatically by this plugin
 
 ```js
 const doSomething = (method) => {
