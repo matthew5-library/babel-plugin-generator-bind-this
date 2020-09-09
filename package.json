@@ -1,0 +1,26 @@
+{
+  "name": "babel-plugin-generator-bind-this",
+  "version": "0.1.1",
+  "main": "lib/index.js",
+  "repository": "git@github.com:matthew5-library/babel-plugin-generator-bind-this.git",
+  "author": "Matthew5",
+  "license": "MIT",
+  "scripts": {
+    "build": "babel src/index.js -o lib/index.js",
+    "transform": "babel transform/input.js -o transform/output.js --config-file ./transform/.babelrc.js && node transform/output.js",
+    "transform:ts": "babel transform/input.ts -o transform/output.js --config-file ./transform/.babelrc.js"
+  },
+  "files": [
+    "lib"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/helper-plugin-test-runner": "^7.10.4",
+    "@babel/helper-plugin-utils": "^7.10.4",
+    "@babel/plugin-syntax-function-bind": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4"
+  }
+}
