@@ -43,8 +43,7 @@ function _createSuper(Derived) {
   };
 }
 
-var createSaga = function createSaga(method) {
-  method.bindThis = true;
+var doSomething = function doSomething(method) {
   return {
     bindValue: 'scope value',
     method: method
@@ -73,37 +72,37 @@ function (_Base) {
 
     _this = _super.call.apply(_super, [this].concat(args));
     _this.bindValue = 'class value';
-    _this.saga1 = createSaga(
+    _this.result1 = doSomething(
     /*#__PURE__*/
-    _regenerator["default"].mark(function getContacts(action) {
-      return _regenerator["default"].wrap(function getContacts$(_context) {
+    _regenerator["default"].mark(function _callee(param) {
+      return _regenerator["default"].wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              console.log(action, this.bindValue);
+              console.log(param, this.bindValue);
 
             case 1:
             case "end":
               return _context.stop();
           }
         }
-      }, getContacts, this);
+      }, _callee, this);
     }).bind(_this));
-    _this.saga2 = createSaga(
+    _this.result2 = doSomething(
     /*#__PURE__*/
-    _regenerator["default"].mark(function getContacts(action) {
-      return _regenerator["default"].wrap(function getContacts$(_context2) {
+    _regenerator["default"].mark(function _callee2(param) {
+      return _regenerator["default"].wrap(function _callee2$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
-              console.log(action, this.bindValue);
+              console.log(param, this.bindValue);
 
             case 1:
             case "end":
               return _context2.stop();
           }
         }
-      }, getContacts, this);
+      }, _callee2, this);
     }).bind((0, _assertThisInitialized2["default"])(_this)));
     return _this;
   }
@@ -112,5 +111,5 @@ function (_Base) {
 }(Base);
 
 var ins = new Test();
-ins.saga1.method('action1').next();
-ins.saga2.method('action2').next();
+ins.result1.method('case1').next();
+ins.result2.method('case2').next();

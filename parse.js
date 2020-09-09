@@ -6,8 +6,8 @@ var demoCode = `
   function Test() {
     var _this = this
     _this.bindValue = 'class value'
-    _this.saga1 = createSaga((function* getContacts(action) {
-      console.log(action, this.bindValue)
+    _this.result1 = doSomething((function* (param) {
+      console.log(param, this.bindValue)
     }).bind(_this))
   }
   `
